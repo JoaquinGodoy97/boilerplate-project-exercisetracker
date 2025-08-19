@@ -7,8 +7,11 @@ let ExerciseSchema = {
     required: true
     },
     description: String,
-    minDuration: Number,
-    date: String
+    duration: Number,
+    date: {
+        type: Date,
+        required: true
+    }
 }
 
 module.exports = mongoose.model("Exercise", ExerciseSchema)
