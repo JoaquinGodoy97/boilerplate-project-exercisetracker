@@ -46,8 +46,8 @@ async function getExerciseLogs(req, res, next) {
 
     if (from || to) {
         filter.date = {};
-        if (from) filter.date.$gte = from;
-        if (to)   filter.date.$lte = to;
+        if (from) filter.date.$gte = from; // greater than or equal special key operator inside mongo
+        if (to)   filter.date.$lte = to; // less than or equal
     }
     
     let query = Exercise.find(filter).select("-userId -__v -_id");
